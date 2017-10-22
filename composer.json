@@ -1,0 +1,49 @@
+{
+  "name": "cobweb/redirect40x",
+  "version": "1.0.0",
+  "type": "typo3-cms-extension",
+  "description": "40x handler for TYPO3",
+  "autoload": {
+    "psr-4": {
+      "Cobweb\\Redirect40x\\": "Classes"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://composer.typo3.org/"
+    }
+  ],
+  "keywords": [
+    "TYPO3 CMS",
+    "Page not found",
+    "404",
+    "Login"
+  ],
+  "authors": [
+    {
+      "name": "Roberto Presedo",
+      "email": "cobweb@cobweb.ch",
+      "role": "Developer",
+      "homepage": "https://github.com/presedo"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "typo3/cms-core": "~8.7.0||dev-master"
+  },
+  "homepage": "https://github.com/cobwebch/redirect40x",
+  "license": "GPL-2.0+",
+  "support": {
+    "issues": "https://github.com/cobwebch/redirect40x/issues"
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web",
+      "Package": {
+        "partOfMinimalUsableSystem": true
+      }
+    }
+  }
+}

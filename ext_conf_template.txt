@@ -1,0 +1,8 @@
+# cat=basic; type=int+; label=UID of the page displaying the Login Form
+LoginPageUid =
+
+# cat=basic; type=int+; label=UID of the page displaying the "Not authorized" message
+UnauthorizedPageUid =
+
+# cat=basic; type=boolean; label=Redirects the visitor to the request page after login
+AddReturnLink =
