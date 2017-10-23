@@ -100,7 +100,7 @@ class Redirect40x
                         }
                     } else {
                         // There is a user identified, but he has no access to the current page
-                        if (!is_array($this->getFeController()->fe_user->user)) {
+                        if (!isset($this->getFeController()->fe_user->user['uid'])) {
                             $this->throw401();
                         } else {
                             $this->throw403();
@@ -115,7 +115,7 @@ class Redirect40x
                         }
                     } else {
                         // There is a user identified, but he has no access to the current page
-                        if (!is_array($this->getFeController()->fe_user->user)) {
+                        if (!isset($this->getFeController()->fe_user->user['uid'])) {
                             $this->throw401();
                         } else {
                             $this->throw403();
