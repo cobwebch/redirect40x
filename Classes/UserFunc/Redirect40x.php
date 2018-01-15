@@ -189,6 +189,7 @@ class Redirect40x
      */
     protected function redirectToLoginPage()
     {
+
         $this->fixFeController();
         $targetUid = intval($this->configuration->get('LoginPageUid'));
         if ($targetUid > 0) {
@@ -198,7 +199,8 @@ class Redirect40x
             if (intval($this->configuration->get('AddReturnLink'))) {
                 $linkParam['additionalParams'] .= '&return_url=' . $this->getCurrentUrl();
             }
-            header('HTTP/1.1 401 Unauthorized');
+
+            header('HTTP/1.1 303 See Other');
             header("Refresh:0; url=" . $this->getUrl($linkParam));
             die;
         } else {
@@ -264,6 +266,8 @@ class Redirect40x
     protected function getUrl($params)
     {
         $params['returnLast'] = 'url';
+        $params['forceAbsoluteUrl'] = true;
+
         $url = $this->cObj->typoLink('', $params);
         if (substr($url, 0, 4) === 'http') {
             return $url;
